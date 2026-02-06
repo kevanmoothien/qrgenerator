@@ -1,0 +1,10 @@
+node_modules/
+qrcode.png
+*.png
+.DS_Store
+npm-debug.log
+yarn-error.log
+angular-app/node_modules/
+angular-app/dist/
+angular-app/.angular/
+dist/
