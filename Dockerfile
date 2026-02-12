@@ -11,7 +11,7 @@ RUN cd angular-app && npm ci
 
 # Build Angular app for production
 # Outputs to ../dist (relative to angular-app), which becomes /app/dist
-RUN cd angular-app && npx ng build --configuration production --output-path=../dist
+RUN cd angular-app && npm run build -- --configuration production --output-path=../dist
 
 # Production stage
 FROM node:20-alpine
