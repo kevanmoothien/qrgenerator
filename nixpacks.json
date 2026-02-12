@@ -10,7 +10,9 @@
         "giflib",
         "pixman",
         "gcc",
-        "gnumake"
+        "gnumake",
+        "nodejs",
+        "yarn"
       ],
       "aptPkgs": [
         "python3",
