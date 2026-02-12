@@ -5,11 +5,11 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server.js",
-    "client": "cd angular-app && yarn ng serve --port 4300",
+    "client": "cd angular-app && npm run ng serve --port 4300",
     "build": "cd angular-app && ng build --output-path=../dist",
-    "install-all": "yarn install && cd angular-app && yarn install"
+    "install-all": "npm install && cd angular-app && npm install"
   },
   "keywords": [
     "qr-code",

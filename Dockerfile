@@ -3,17 +3,15 @@ FROM node:20-alpine AS angular-builder
 
 WORKDIR /app
 
-RUN npm install -g yarn
-
 # Copy Angular app files (maintaining directory structure)
 COPY angular-app/ ./angular-app/
 
 # Install Angular dependencies
-RUN cd angular-app && yarn install --frozen-lockfile
+RUN cd angular-app && npm ci
 
 # Build Angular app for production
 # Outputs to ../dist (relative to angular-app), which becomes /app/dist
-RUN cd angular-app && yarn ng build --configuration production --output-path=../dist
+RUN cd angular-app && npm run ng build -- --configuration production --output-path=../dist
 
 # Production stage
 FROM node:20-alpine
@@ -37,10 +35,10 @@ RUN apk add --no-cache \
     pixman-dev
 
 # Copy package files
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 
 # Install production dependencies
-RUN yarn install --frozen-lockfile --production
+RUN npm ci --only=production
 
 # Copy server file
 COPY server.js ./
