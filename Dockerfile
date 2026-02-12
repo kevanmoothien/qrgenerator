@@ -3,6 +3,8 @@ FROM node:20-alpine AS angular-builder
 
 WORKDIR /app
 
+RUN npm install -g yarn
+
 # Copy Angular app files (maintaining directory structure)
 COPY angular-app/ ./angular-app/
 
