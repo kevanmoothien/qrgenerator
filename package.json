@@ -7,7 +7,7 @@
     "start": "node server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server.js",
-    "client": "cd angular-app && npm run ng serve --port 4300",
+    "client": "cd angular-app && npm run ng -- serve --port 4300",
     "build": "cd angular-app && ng build --output-path=../dist",
     "install-all": "npm install && cd angular-app && npm install"
   },
