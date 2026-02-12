@@ -1,0 +1,26 @@
+{
+  "phases": {
+    "setup": {
+      "nixPkgs": [
+        "python3",
+        "cairo",
+        "pango",
+        "pkg-config",
+        "libjpeg",
+        "giflib",
+        "pixman",
+        "gcc",
+        "gnumake"
+      ],
+      "aptPkgs": [
+        "python3",
+        "build-essential",
+        "libcairo2-dev",
+        "libpango1.0-dev",
+        "libjpeg-dev",
+        "libgif-dev",
+        "librsvg2-dev"
+      ]
+    }
+  }
+}
